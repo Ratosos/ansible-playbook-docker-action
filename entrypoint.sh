@@ -81,7 +81,7 @@ else
     echo "\$INPUT_GALAXYGITHUBTOKEN not set. Won't do any authentication for roles installation."
   fi
 
-  ansible-galaxy install --force \
+  ansible-galaxy role install --force \
     -p ${ROLES_PATH} \
     -r ${REQUIREMENTS} \
     ${VERBOSITY}
