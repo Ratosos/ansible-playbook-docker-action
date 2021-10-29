@@ -1,4 +1,4 @@
-FROM pinkrobin/docker-ansible-alpine:2.9.11
+FROM alpine/ansible
 
 MAINTAINER Patrick Pötz <devops@wastebox.biz>
 
