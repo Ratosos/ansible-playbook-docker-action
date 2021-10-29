@@ -81,7 +81,7 @@ else
     echo "\$INPUT_GALAXYGITHUBTOKEN not set. Won't do any authentication for roles installation."
   fi
 
-  ansible-galaxy collection install community.azure --force \
+  ansible-galaxy collection install azure.azcollection --force \
 #    -p ${ROLES_PATH} \
 #    -r ${REQUIREMENTS} \
 #    ${VERBOSITY}
