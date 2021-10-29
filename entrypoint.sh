@@ -84,7 +84,7 @@ else
   ansible-galaxy collection install community.azure --force \
 #    -p ${ROLES_PATH} \
 #    -r ${REQUIREMENTS} \
-    ${VERBOSITY}
+#    ${VERBOSITY}
 fi
 
 # Evaluate extra vars file
