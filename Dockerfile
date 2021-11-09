@@ -21,7 +21,7 @@ RUN mkdir -p /ansible
 WORKDIR /ansible
 
 RUN pip3 install msrest
-RUN pip3 install msrestazure
+#RUN pip3 install msrestazure
 
 #RUN pip install azureml-sdk --no-cache-dir
 #RUN pip install --upgrade azureml-core
