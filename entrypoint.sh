@@ -97,11 +97,20 @@ else
   export EXTRAFILE="--extra-vars @${INPUT_EXTRAFILE}"
 fi
 
+export SUBSCRIPTION=
+if [ -z "$AZURE_SUBSCRIPTION_ID" ]
+then
+  echo "\$AZURE_SUBSCRIPTION_ID not set. não tem credenciais."
+else
+  echo "\$AZURE_SUBSCRIPTION_ID is set. vou usar ${AZURE_SUBSCRIPTION_ID} como subscricao."
+  export SUBSCRIPTION="${AZURE_SUBSCRIPTION_ID}"
+fi
+
 # Carregar dados para login na azure
-export AZURE_SUBSCRIPTION_ID="${AZURE_SUBSCRIPTION_ID}"
-export AZURE_CLIENT_ID="${AZURE_CLIENT_ID}"
-export AZURE_SECRET="${AZURE_SECRET}"
-export AZURE_TENANT="${AZURE_TENANT}"
+export AZURE_SUBSCRIPTION_ID="${SUBSCRIPTION}"
+#export AZURE_CLIENT_ID="${AZURE_CLIENT_ID}"
+#export AZURE_SECRET="${AZURE_SECRET}"
+#export AZURE_TENANT="${AZURE_TENANT}"
 
 echo "going to execute: "
 echo ansible-playbook ${INPUT_PLAYBOOKNAME} ${INVENTORY} ${EXTRAFILE} ${INPUT_EXTRAVARS} ${KEYFILE} ${KEYFILEVAULTPASS} ${VERBOSITY}
