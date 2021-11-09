@@ -33,16 +33,16 @@ inputs:
   extraFile:
     description: 'File containing extra vars.'
     required: false
-  AZURE_SUBSCRIPTION_ID:
+  AZURE_SUB:
     description: 'Sub de Azure.'
     required: false
-  AZURE_CLIENT_ID:
+  AZURE_CLI:
     description: 'Azure id de cliente.'
     required: false
-  AZURE_SECRET:
+  AZURE_SEC:
     description: 'Segredo Azure.'
     required: false
-  AZURE_TENANT:
+  AZURE_TEN:
     description: 'Tenant de Azure.'
     required: false
   verbosity:
