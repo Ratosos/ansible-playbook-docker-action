@@ -3,7 +3,7 @@ FROM alpine/ansible
 MAINTAINER Patrick Pötz <devops@wastebox.biz>
 
 RUN apk --update --no-cache add \
-        python3
+        python3 \
 && pip3 install \
         msrestazure
 
