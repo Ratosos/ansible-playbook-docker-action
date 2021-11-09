@@ -15,7 +15,7 @@ RUN \
    openssh-client \
    bash \
    tar && \
- pip install --upgrade pip
+ pip install --upgrade pip $$ pip install --upgrade ansible
 
 RUN mkdir -p /ansible 
 WORKDIR /ansible
