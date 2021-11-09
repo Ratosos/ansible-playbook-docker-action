@@ -20,9 +20,9 @@ RUN \
 RUN mkdir -p /ansible 
 WORKDIR /ansible
 
-COPY requirements_azure.txt /ansible/requirements_azure.txt
+#COPY requirements_azure.txt /ansible/requirements_azure.txt
 
-RUN pip3 install -r /ansible/requirements_azure.txt
+#RUN pip3 install -r /ansible/requirements_azure.txt
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
