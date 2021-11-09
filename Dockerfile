@@ -15,11 +15,12 @@ RUN \
    openssh-client \
    bash \
    tar && \
- pip install --upgrade pip $$ pip install --upgrade ansible
+ pip install --upgrade pip 
 
 RUN mkdir -p /ansible 
 WORKDIR /ansible
 
+RUN pip install --upgrade ansible
 RUN pip3 install msrest
 #RUN pip3 install msrestazure
 
