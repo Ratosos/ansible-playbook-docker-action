@@ -10,7 +10,6 @@ RUN \
    py-boto \
    py-dateutil \
    py-httplib2 \
-   py-jinja2 \
    py-paramiko \
    py-setuptools \
    py-yaml \
