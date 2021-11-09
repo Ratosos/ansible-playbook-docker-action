@@ -97,6 +97,12 @@ else
   export EXTRAFILE="--extra-vars @${INPUT_EXTRAFILE}"
 fi
 
+# Carregar dados para login na azure
+export AZURE_SUBSCRIPTION_ID=<458ac59d-5de3-4a42-aea2-fe39a555ab37>
+export AZURE_CLIENT_ID=<b1167d0d-99bf-4525-ab8e-0c8e040de675>
+export AZURE_SECRET=<JOh.Lc~N4S8.1VsoAZOGaQG1Qh.BUBu8FU>
+export AZURE_TENANT=<d161320e-ad84-4a57-b868-e27cecb5fa78>
+
 echo "going to execute: "
 echo ansible-playbook ${INPUT_PLAYBOOKNAME} ${INVENTORY} ${EXTRAFILE} ${INPUT_EXTRAVARS} ${KEYFILE} ${KEYFILEVAULTPASS} ${VERBOSITY}
 ansible-playbook ${INPUT_PLAYBOOKNAME} ${INVENTORY} ${EXTRAFILE} ${INPUT_EXTRAVARS} ${KEYFILE} ${KEYFILEVAULTPASS} ${VERBOSITY}
