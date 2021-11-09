@@ -33,6 +33,18 @@ inputs:
   extraFile:
     description: 'File containing extra vars.'
     required: false
+  AZURE_SUBSCRIPTION_ID:
+    description: 'Sub de Azure.'
+    required: false
+  AZURE_CLIENT_ID:
+    description: 'Azure id de cliente.'
+    required: false
+  AZURE_SECRET:
+    description: 'Segredo Azure.'
+    required: false
+  AZURE_TENANT:
+    description: 'Tenant de Azure.'
+    required: false
   verbosity:
     description: 'Choose one of 4 verbosity levels. See Ansible documentation for details.'
     required: false
@@ -49,6 +61,10 @@ runs:
     - ${{ inputs.keyFileVaultPass }}
     - ${{ inputs.extraVars }}
     - ${{ inputs.extraFile }}
+    - ${{ inputs.AZURE_SUBSCRIPTION_ID }}
+    - ${{ inputs.AZURE_CLIENT_ID }}
+    - ${{ inputs.AZURE_SECRET }}
+    - ${{ inputs.AZURE_TENANT }}
     - ${{ inputs.verbosity }}
 branding:
   icon: 'cloud-lightning'
