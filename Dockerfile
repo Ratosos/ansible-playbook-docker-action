@@ -1,31 +1,25 @@
-FROM alpine/ansible
+FROM centos:7
 
-RUN \
-# apk add installs the following
- apk add \
-   curl \
-   python3 \
-   py3-pip \
-   py-boto \
-   py-dateutil \
-   py-httplib2 \
-   py-paramiko \
-   py-setuptools \
-   py-yaml \
-   openssh-client \
-   bash \
-   tar && \
- pip install --upgrade pip 
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
 
-RUN mkdir -p /ansible 
-WORKDIR /ansible
+RUN yum check-update; \
+    yum install -y gcc libffi-devel python3 epel-release; \
+    yum install -y python3-pip; \
+    yum install -y wget; \
+    yum clean all
 
-#RUN pip install azureml-sdk --no-cache-dir
-#RUN pip install --upgrade azureml-core
-
-COPY requirements_azure.txt /ansible/requirements_azure.txt
-
-RUN pip3 install -r /ansible/requirements_azure.txt
+RUN pip3 install --upgrade pip; \
+    pip3 install --upgrade virtualenv; \
+    pip3 install pywinrm[kerberos]; \
+    pip3 install pywinrm; \
+    pip3 install jmspath; \
+    pip3 install requests; \
+    python3 -m pip install ansible; \
+    wget -q https://raw.githubusercontent.com/ansible-collections/azure/dev/requirements-azure.txt; \
+    pip3 install -r requirements-azure.txt; \
+    rm requirements-azure.txt; \
+    ansible-galaxy collection install azure.azcollection
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
