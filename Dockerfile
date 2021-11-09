@@ -20,7 +20,10 @@ RUN \
 RUN mkdir -p /ansible 
 WORKDIR /ansible
 
-RUN pip install azureml-sdk --no-cache-dir
+RUN pip3 install msrest
+RUN pip3 install msrestazure
+
+#RUN pip install azureml-sdk --no-cache-dir
 #RUN pip install --upgrade azureml-core
 
 #COPY requirements_azure.txt /ansible/requirements_azure.txt
