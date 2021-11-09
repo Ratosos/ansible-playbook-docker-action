@@ -6,7 +6,6 @@ RUN \
    curl \
    python3 \
    py3-pip \
-   py3-cryptography \
    py-boto \
    py-dateutil \
    py-httplib2 \
