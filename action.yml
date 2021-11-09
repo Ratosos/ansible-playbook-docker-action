@@ -61,10 +61,10 @@ runs:
     - ${{ inputs.keyFileVaultPass }}
     - ${{ inputs.extraVars }}
     - ${{ inputs.extraFile }}
-    - ${{ inputs.AZURE_SUBSCRIPTION_ID }}
-    - ${{ inputs.AZURE_CLIENT_ID }}
-    - ${{ inputs.AZURE_SECRET }}
-    - ${{ inputs.AZURE_TENANT }}
+    - ${{ inputs.AZURE_SUB }}
+    - ${{ inputs.AZURE_CLI }}
+    - ${{ inputs.AZURE_SEC }}
+    - ${{ inputs.AZURE_TEN }}
     - ${{ inputs.verbosity }}
 branding:
   icon: 'cloud-lightning'
