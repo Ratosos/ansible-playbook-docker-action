@@ -20,7 +20,7 @@ RUN \
 RUN mkdir -p /ansible 
 WORKDIR /ansible
 
-RUN pip install --upgrade ansible
+RUN pip3 install ansible[azure] 
 RUN pip3 install msrest
 #RUN pip3 install msrestazure
 
