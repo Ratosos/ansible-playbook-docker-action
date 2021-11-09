@@ -20,16 +20,12 @@ RUN \
 RUN mkdir -p /ansible 
 WORKDIR /ansible
 
-RUN pip3 install ansible[azure] 
-RUN pip3 install msrest
-#RUN pip3 install msrestazure
-
 #RUN pip install azureml-sdk --no-cache-dir
 #RUN pip install --upgrade azureml-core
 
-#COPY requirements_azure.txt /ansible/requirements_azure.txt
+COPY requirements_azure.txt /ansible/requirements_azure.txt
 
-#RUN pip3 install -r /ansible/requirements_azure.txt
+RUN pip3 install -r /ansible/requirements_azure.txt
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
