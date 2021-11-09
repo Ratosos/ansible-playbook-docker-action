@@ -80,8 +80,6 @@ else
   else
     echo "\$INPUT_GALAXYGITHUBTOKEN not set. Won't do any authentication for roles installation."
   fi
-  wget -nv -q https://raw.githubusercontent.com/ansible-collections/azure/dev/requirements-azure.txt
-  pip install -r requirements-azure.txt
   
   ansible-galaxy collection install azure.azcollection --force \
 #    -p ${ROLES_PATH} \
