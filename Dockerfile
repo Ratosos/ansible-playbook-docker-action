@@ -16,9 +16,12 @@ RUN \
    bash \
    tar && \
  pip install --upgrade pip
- 
+
 RUN mkdir -p /ansible 
 WORKDIR /ansible
+
+RUN pip install azureml-sdk --no-cache-dir
+RUN pip install --upgrade azureml-core
 
 #COPY requirements_azure.txt /ansible/requirements_azure.txt
 
