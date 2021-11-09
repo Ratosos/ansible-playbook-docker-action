@@ -1,27 +1,24 @@
 FROM alpine/ansible
 
-RUN apk --update --no-cache add \
-        ca-certificates \
-        openssh-client \
-        openssl \
-        python3\
-        py3-pip \
-        py3-cryptography \
-        sshpass
-
-RUN apk --update add --virtual \
-        .build-deps \
-        python3-dev \
-        libffi-dev \
-        openssl-dev \
-        build-base \
-        curl \
- && pip3 install --upgrade \
-        pip \
-        cffi \
- && apk del \
-        .build-deps \
-
+RUN \
+# apk add installs the following
+ apk add \
+   curl \
+   python3 \
+   py3-pip \
+   py3-cryptography \
+   py-boto \
+   py-dateutil \
+   py-httplib2 \
+   py-jinja2 \
+   py-paramiko \
+   py-setuptools \
+   py-yaml \
+   openssh-client \
+   bash \
+   tar && \
+ pip install --upgrade pip
+ 
 RUN mkdir -p /ansible 
 WORKDIR /ansible
 
