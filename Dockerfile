@@ -4,14 +4,14 @@ ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 RUN yum check-update; \
-    yum install -y gcc libffi-devel openssl-devel bzip2-devel python3 epel-release; \
+    yum install -y gcc libffi-devel openssl-devel bzip2-devel python3.8 ; \
     yum install -y python3-pip; \
     yum install -y wget; \
-    wget https://www.python.org/ftp/python/3.8.12/Python-3.8.12.tgz \
-    tar xzf Python-3.8.12.tgz \
-    cd Python-3.8.12 \
-    ./configure --enable-optimizations \
-    make altinstall \
+    #wget https://www.python.org/ftp/python/3.8.12/Python-3.8.12.tgz \
+    #tar xzf Python-3.8.12.tgz \
+    #cd Python-3.8.12 \
+    #./configure --enable-optimizations \
+    #make altinstall \
     yum clean all
 
 RUN pip3 install --upgrade pip; \
