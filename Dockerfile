@@ -2,10 +2,6 @@ FROM centos:7
 
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
-ENV AZURE_SUB="${{ secrets.AZURE_SUBSCRIPTION_ID }}"
-ENV AZURE_CLI="${{ secrets.AZURE_CLIENT_ID }}"
-ENV AZURE_SEC="${{ secrets.AZURE_SECRET }}"
-ENV AZURE_TEN="${{ secrets.AZURE_TENANT }}"
 
 RUN yum check-update; \
     yum install -y gcc libffi-devel openssl-devel bzip2-devel python3.8 ; \
