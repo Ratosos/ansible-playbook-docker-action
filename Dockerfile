@@ -2,7 +2,7 @@ FROM centos:7
 
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
-RUN echo ${AZURE_SUB}
+RUN echo $AZURE_SUB
 RUN yum check-update; \
     yum install -y gcc libffi-devel openssl-devel bzip2-devel python3.8 ; \
     yum install -y python3-pip; \
