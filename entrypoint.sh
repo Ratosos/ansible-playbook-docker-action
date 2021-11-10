@@ -98,10 +98,10 @@ else
 fi
 
 # Carregar dados para login na azure
-export AZURE_SUBSCRIPTION_ID="$AZURE_SUB"
-export AZURE_CLIENT_ID="$AZURE_CLI"
-export AZURE_SECRET="$AZURE_SEC"
-export AZURE_TENANT="$AZURE_TEN"
+export AZURE_SUBSCRIPTION_ID="$10"
+export AZURE_CLIENT_ID="$11"
+export AZURE_SECRET="$12"
+export AZURE_TENANT="$13"
 
 echo "going to execute: "
 echo ansible-playbook ${INPUT_PLAYBOOKNAME} ${INVENTORY} ${EXTRAFILE} ${INPUT_EXTRAVARS} ${KEYFILE} ${KEYFILEVAULTPASS} ${VERBOSITY}
